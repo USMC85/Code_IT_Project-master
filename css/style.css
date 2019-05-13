@@ -1,26 +1,49 @@
-/* =================================
-  Base Element Styles
-==================================== */
+/* Base Styles -------------------- */
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	line-height: 1.6;
-	color: #3a3a3a;
+  color: #878787;
+  margin: 0;
+  font: 1em/1.5 "Times New Roman", Arial, Helvetica, sans-serif;
 }
 
-a {
-	color: #fff;
-	text-decoration: none;
+h1 {
+  font-size: 5.625rem; /* 90px/16px  */
+  color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
+  font-weight: normal;
+  line-height: 1.3;
+  text-shadow: 0 1px 1px rgba(0,0,0,.8);
 }
 
+h2 {
+  font-size: 3.3125em; /* 53px/16px  */
+  font-weight: normal;
+  line-height: 1.1;
+  margin: 0 0 .5em; /* 0 0 26px */
+}
+
+h3 {
+  font-size: 1.25em; /* 20px/16px  */
+  color: #48525c;
+  line-height: 1.2;
+  margin-bottom: 1.7em; /* 34px */
+}
 /* =================================
-  Base Layout Styles
+  Image
 ==================================== */
-/* ---- Rotate Image ---- */
-/* ---- Rotate Speed ---- */
+/* ---- Left Align Logo ---- */
+img {
+  max-width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+/* ---- Rotate Image/Speed ---- */
+
 .rotate {
   -webkit-transition:all 0.5s ease-out;
   -moz-transition:all 0.5s ease-out;
@@ -37,50 +60,174 @@ a {
   transform:scale(1.3) rotate(360deg);
 }
 
-	/* ---- Navigation ---- */
-
-.name {
-	margin: 0;
+ul,
+ol {
+  margin: 30px 0;
 }
 
-/* ---- Layout Containers ---- */
+li {
+  margin-bottom: 10px;
+}
 
-.container {
-	padding-left: 1em;
-	padding-right: 1em;
-}
-/* Creates the top horizontal nav bar */
-.topnav {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-/* Forces the bar itmes to the left then spaces them out with the "width".  25% for 4 items, but need to change that if more memu items added. */
-.topnav li {float: left;
-			width: 25%;}
-/* Formats the nav block at top of page */
-.topnav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
+/* Pseudo-classes ------------------ */
+
+a:link {
+  color: rgb(255, 169, 73);
   text-decoration: none;
 }
 
+a:visited {
+  color: lightblue;
+}
+
+a:hover {
+  color: rgba(255, 169, 73, .4);
+}
+
+a:active {
+  color: lightcoral;
+}
+
+/* Main Styles --------------------- */
 
 .main-header {
-	background: #7ba0cf;
-	padding: 1em 0;
+
+  padding-top: 1px;
+  height: 285px;
+  background: #ffa949;
+  background-size: cover;
+
+  background-image: radial-gradient(circle at top right, #ffa949 10%, firebrick 60%, dodgerblue 120%);
+}
+.main-header img {
+  float: left;
+  top: 0px;
+  width: 300px;
+  height: 300px;
+}
+
+.title {
+  color: white;
+  font-size: 1.625rem; /* 26px/16px */
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.intro {
+  font-size: 1.25em; /* 20px/16px */
+  line-height: 1.6;
+}
+
+.primary-content,
+.main-header,
+.main-footer {
+  text-align: center;
+}
+
+.primary-content {
+	padding-top: 25px;
+  padding-bottom: 95px;
+}
+
+.secondary-content {
+	padding-top: 80px;
+	padding-bottom: 70px;
+  border-bottom: 2px solid #dfe2e6;
+}
+
+.callout {
+  font-size: 1.25em;
+  border-bottom: 3px solid;
+  padding: 0 9px 3px;
+  margin-top: 20px;
+  display: inline-block;
 }
 
 .main-footer {
-	text-align: center;
-	padding: 2em 0;
-	background: #b5c5ce;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border-bottom: 10px solid #2a7deb;
 }
 
+.t-border {
+  border-top: 2px solid #dfe2e6;
+}
+
+/* Layout Styles ------------------ */
+
+.primary-content,
+.secondary-content {
+  width: 75%;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: auto;
+  max-width: 960px;
+}
+
+.wildlife {
+  color: white;
+  text-align: left;
+  padding: 18% 24%;
+  border-top: 10px solid #ffa949;
+  margin: 105px 0 60px;
+  background: #434a52 url('../img/mountains.jpg') no-repeat center;
+  background-size: cover;
+  box-shadow: inset 0 0 50px 10px rgba(0,0,0, .8);
+  border-radius: 10px;
+}
+
+.arrow {
+  width: 50px;
+}
+
+/* Floated Columns ------------------ */
+
+.resorts,
+.tips {
+  width: 46.5%;
+}
+
+.tips {
+  float: left;
+}
+
+.resorts {
+  float: right;
+}
+
+/* Float Clearfix ------------------ */
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 /* =================================
   Media Queries
 ==================================== */
@@ -90,5 +237,10 @@ a {
 		width: 70%;
 		max-width: 1000px;
 		margin: 0 auto;
-	}
+  }
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+ }
 }
