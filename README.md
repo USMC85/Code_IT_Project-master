@@ -1,2 +1,2 @@
-# Code_IT_Project-master
-IT Consulting Project
+# Code_Louisville_Project
+Project for Code Louisville
