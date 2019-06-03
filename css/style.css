@@ -1,246 +1,230 @@
-/* Base Styles -------------------- */
+/* ================================= 
+  Base Styles
+==================================== */
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-  color: #878787;
-  margin: 0;
-  font: 1em/1.5 "Times New Roman", Arial, Helvetica, sans-serif;
+	font-family: 'Varela Round', sans-serif;
+	line-height: 1.6;
+	color: #3a3a3a;
 }
 
+p {
+	font-size: .95em;
+	margin-bottom: 1.5em;
+}
+ 
 h1 {
-  font-size: 5.625rem; /* 90px/16px  */
-  color: rgba(255, 255, 255, 1);
-  text-transform: uppercase;
-  font-weight: normal;
-  line-height: 1.3;
-  text-shadow: 0 1px 1px rgba(0,0,0,.8);
+	font-size: 4rem; /* 5rem = 90px/16px  */
+    text-align: center;
+	color: rgb(17, 16, 16);
+	text-transform: uppercase;
+	font-weight: normal;
+	line-height: 1.3;
+	text-shadow: 0 1px 1px rgba(0,0,0,.8);
+  }
+
+h2,
+h3,
+a {
+	color: #093a58;
 }
 
-h2 {
-  font-size: 3.3125em; /* 53px/16px  */
-  font-weight: normal;
-  line-height: 1.1;
-  margin: 0 0 .5em; /* 0 0 26px */
-}
-
+h2,
 h3 {
-  font-size: 1.25em; /* 20px/16px  */
-  color: #48525c;
-  line-height: 1.2;
-  margin-bottom: 1.7em; /* 34px */
+	margin-top: 0;
 }
+
+a {
+	text-decoration: none;
+}
+
 /* =================================
   Image
 ==================================== */
 /* ---- Left Align Logo ---- */
 img {
-  max-width: 100%;
-  margin-bottom: 20px;
-  border-radius: 10px;
+	max-width: 100%;
+	/* margin-bottom: 20px; */
+	border-radius: 10px;
+	background-size: cover;
+}
+  
+  /* ---- Rotate Image/Speed ---- */
+  
+  .rotate {
+	-webkit-transition:all 0.5s ease-out;
+	-moz-transition:all 0.5s ease-out;
+	-ms-transition:all 0.5s ease-out;
+	-o-transition:all 0.5s ease-out;
+	transition:all 0.5s ease-out;
+  }
+  /* ---- Rotattion and scaling setting for logo ---- */
+  .rotate:hover {
+	-webkit-transform:scale(1.3) rotate(360deg);
+	-moz-transform:scale(1.3) rotate(360deg);
+	-ms-transform:scale(1.3) rotate(360deg);
+	-o-transform:scale(1.3) rotate(360deg);
+	transform:scale(1.3) rotate(360deg);
+  }
+
+  /* ---- Resize Logo ---- */
+ .resizelogo
+ {
+    
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px; 
+  height: 250%;
+
 }
 
-/* ---- Rotate Image/Speed ---- */
+/* ================================= 
+  Base Layout Styles
+==================================== */
 
-.rotate {
-  -webkit-transition:all 0.5s ease-out;
-  -moz-transition:all 0.5s ease-out;
-  -ms-transition:all 0.5s ease-out;
-  -o-transition:all 0.5s ease-out;
-  transition:all 0.5s ease-out;
-}
-/* ---- Rotattion and scaling setting for logo ---- */
-.rotate:hover {
-  -webkit-transform:scale(1.3) rotate(360deg);
-  -moz-transform:scale(1.3) rotate(360deg);
-  -ms-transform:scale(1.3) rotate(360deg);
-  -o-transform:scale(1.3) rotate(360deg);
-  transform:scale(1.3) rotate(360deg);
+/* ---- Navigation ---- */
+
+.name {
+	font-size: 1.25em;
 }
 
-ul,
-ol {
-  margin: 30px 0;
+.name,
+.main-nav li {
+	
+	text-align: center;
+	background: #fff;
+	padding: 14px 16px;
+	margin-top: 6px;
+	margin-bottom: 6px;
 }
 
-li {
-  margin-bottom: 10px;
+.main-nav a {
+	font-size: .95em;
+	color: #3f2ed4;
+	text-transform: uppercase;
+	
 }
 
-/* Pseudo-classes ------------------ */
-
-a:link {
-  color: rgb(255, 169, 73);
-  text-decoration: none;
+.main-nav a:hover {
+	color: #093a58;
 }
 
-a:visited {
-  color: lightblue;
+.name a,
+.main-nav a {
+	padding: 10px 15px;
 }
 
-a:hover {
-  color: rgba(255, 169, 73, .4);
+.media-nav li {
+	
+	/* Used to horizontally align the social media icons */
+	padding: 14px 16px; 
+	display: inline-block;
+	float: 6%; 
+	
+  
+/* ---- Temp code to highlight social media icons ---- */
+  	outline: 2px dashed blue;
 }
 
-a:active {
-  color: lightcoral;
+.media-nav ul {
+	display: inline-block;
+	
 }
 
-/* Main Styles --------------------- */
+.social-image {
+	float: inline-block;
+	
+}
+
+.wrap {
+  text-align: center;	
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+/* ---- Layout Containers ---- */
+
+.container {
+	
+	padding-left: 1em;
+	padding-right: 1em;
+	
+}
+
+.container2 {
+	text-align: left;
+	padding-left: 1em;
+	padding-right: 1em;
+	width: 70%;
+	column-count: 2;
+}
+
 
 .main-header {
-
-  padding-top: 1px;
-  height: 285px;
-  background: #ffa949;
-  background-size: cover;
-
-  background-image: radial-gradient(circle at top right, #ffa949 10%, firebrick 60%, dodgerblue 120%);
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+	background: #3acec2;
+	margin-bottom: 30px;
 }
-.main-header img {
-  float: left;
-  top: 0px;
-  width: 300px;
-  height: 300px;
-}
-
-.title {
-  color: white;
-  font-size: 1.625rem; /* 26px/16px */
-}
-
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #333;
-  overflow: hidden;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.intro {
-  font-size: 1.25em; /* 20px/16px */
-  line-height: 1.6;
-}
-
-.primary-content,
-.main-header,
-.main-footer {
-  text-align: center;
-}
-
-.primary-content {
-	padding-top: 25px;
-  padding-bottom: 95px;
-}
-
-.secondary-content {
-	padding-top: 80px;
-	padding-bottom: 70px;
-  border-bottom: 2px solid #dfe2e6;
-}
-
-.callout {
-  font-size: 1.25em;
-  border-bottom: 3px solid;
-  padding: 0 9px 3px;
-  margin-top: 20px;
-  display: inline-block;
+.xprimary{
+	column-count: 2;
 }
 
 .main-footer {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  border-bottom: 10px solid #2a7deb;
+	text-align: center;
+	padding: 2em 0;
+	background: #d9e4ea;
 }
 
-.t-border {
-  border-top: 2px solid #dfe2e6;
+/* ================================= 
+Flexbox
+==================================== */
+.containerflex {
+	
+	display: flex; /* =set flex container = */
+	flex-wrap: wrap;
+	
 }
 
-/* Layout Styles ------------------ */
-
-.primary-content,
-.secondary-content {
-  width: 75%;
-  padding-left: 50px;
-  padding-right: 50px;
-  margin: auto;
-  max-width: 960px;
-}
-
-.midsection {
-  color: white;
-  text-align: left;
-  padding: 18% 24%;
-  border-top: 10px solid #ffa949;
-  margin: 105px 0 60px;
-  background: #434a52 url('../img/codepic.jpg') no-repeat center;
-  background-size: cover;
-  box-shadow: inset 0 0 50px 10px rgba(0,0,0, .8);
-  border-radius: 10px;
-}
-
-.arrow {
-  width: 50px;
-}
-
-/* Floated Columns ------------------ */
-
-.resorts,
-.tips {
-  width: 46.5%;
-}
-
-.tips {
-  float: left;
-}
-
-.resorts {
-  float: right;
-}
-
-/* Float Clearfix ------------------ */
-
-.group:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* =================================
+/* ================================= 
   Media Queries
 ==================================== */
 
 @media (min-width: 769px) {
+
+	.wrap {
+		min-height: calc(100vh - 89px);
+	}
+
 	.container {
-		width: 70%;
-		max-width: 1000px;
+		width: 80%;
+		max-width: 1150px;
 		margin: 0 auto;
-  }
-  .clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
- }
+	}
+
+	.name,
+	.main-nav,
+	.main-nav li {
+		display: inline;
+	}
+
+	.name {
+		width: 240px;
+		margin-right: 50px;
+	}
+ 	img { 
+		display: flex;
+    justify-content: center;
+		
+		 
+		}
 }
+
+
+
+
