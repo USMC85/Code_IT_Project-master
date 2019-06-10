@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Contact Form</title> <!-- Include CSS file here -->
-<link href="css/form.css" rel="stylesheet">
+	<title>K-Rod Technology</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="contact.js"></script>
 </head>
 <body>
-<div id="main">
-<h1>K-Rod Contact Form</h1>
-<div id="form_sample"></div> <!-- Include JS file here -->
-<script src="js/form.js"></script>
+
+	<div class="wrap">
+
+		<header class="main-header">
+				<img class="rotate clearfix resizelogo" src="img/K-Rod-01.png" alt="logo" align=left>
+
+				<div class="container containerflex">
+						<h1 >K-Rod Technology</h1>
+				<ul class="main-nav containerflex">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#">Forensics</a></li>
+					<li><a href="#">Cyber-security</a></li>
+					<li><a href="#">Compliance</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">About</a></li>
+				</ul>
+			</div>
+
+		</header>
+
+		<div class="formflex">
+	<form class="formflex" name="contact" method="post">
+	<label>Name</label>
+	<input type="text" name="name" />
+	<label>Subject</label>
+	<input type="text" name="subject" />
+	<label>Phone Number</label>
+	<input type="text" name="phone" />
+	<label>Message</label>
+	<textarea name="message"></textarea>
+
+	<input type="submit" name="send" value="Send Message" />
+</form>
+			</div><!--/contact-->
+
+
+
+					<hr>
+					<a href="mailto:someone@yoursite.com?subject=Contacting%20K-Rod&body=Type-message-here">Click here to use your own email client</a>
+					<hr>
+				<div><footer class="main-footer">
+					<p>&copy;2019 K-Rod, LLC. All rights reserved.</p>
+					<a href="#top">Back to top &raquo;</a>
+	</footer>
 </div>
+</div><!--/.wrap-->
 </body>
 </html>

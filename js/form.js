@@ -1,58 +1,35 @@
+// JS Contact Form
+<!-- Contact Form Here -->
+<script>
+	var form = document.forms["contact"];
+	form.addEventListener('submit',contact_submit,false);
 
-// Fetching HTML Elements in Variables by ID.
-var x = document.getElementById("form_sample");
-var createform = document.createElement('form'); // Create New Element Form
-createform.setAttribute("action", ""); // Setting Action Attribute on Form
-createform.setAttribute("method", "post"); // Setting Method Attribute on Form
-x.appendChild(createform);
+	function contact_submit(e) {
+		// Stop Form From Submitting
+		e.preventDefault();
 
-var heading = document.createElement('h2'); // Heading of Form
-heading.innerHTML = "Contact Form ";
-createform.appendChild(heading);
+		// Set Initial Variables
+		var target = e.target || e.srcElement;
+		var to = 'rodgers@mailinator.com';
+		var uri = 'mailto:' + to;
+		var body = '';
 
-var line = document.createElement('hr'); // Giving Horizontal Row After Heading
-createform.appendChild(line);
+		// Set Form Values to Variables
+		var name = target.elements['name'].value;
+		var subject = target.elements['subject'].value;
+		var phone = target.elements['phone'].value;
+		var message = target.elements['message'].value;
 
-var linebreak = document.createElement('br');
-createform.appendChild(linebreak);
+		// Build Body / Message with all Input Fields
+		body += message + "\r\n\r\n";
+		body += "Name: " + name + "\r\n";
+		body += "Phone Number: " + phone + "\r\n";
 
-var namelabel = document.createElement('label'); // Create Label for Name Field
-namelabel.innerHTML = "Your Name : "; // Set Field Labels
-createform.appendChild(namelabel);
+		// Build final Mailto URI
+		uri += '?subject=' + encodeURIComponent(subject);
+		uri += '&body=' + encodeURIComponent(body);
 
-var inputelement = document.createElement('input'); // Create Input Field for Name
-inputelement.setAttribute("type", "text");
-inputelement.setAttribute("name", "dname");
-createform.appendChild(inputelement);
-
-var linebreak = document.createElement('br');
-createform.appendChild(linebreak);
-
-var emaillabel = document.createElement('label'); // Create Label for E-mail Field
-emaillabel.innerHTML = "Your Email : ";
-createform.appendChild(emaillabel);
-
-var emailelement = document.createElement('input'); // Create Input Field for E-mail
-emailelement.setAttribute("type", "text");
-emailelement.setAttribute("name", "demail");
-createform.appendChild(emailelement);
-
-var emailbreak = document.createElement('br');
-createform.appendChild(emailbreak);
-
-var messagelabel = document.createElement('label'); // Append Textarea
-messagelabel.innerHTML = "Your Message : ";
-createform.appendChild(messagelabel);
-
-var texareaelement = document.createElement('textarea');
-texareaelement.setAttribute("name", "dmessage");
-createform.appendChild(texareaelement);
-
-var messagebreak = document.createElement('br');
-createform.appendChild(messagebreak);
-
-var submitelement = document.createElement('input'); // Append Submit Button
-submitelement.setAttribute("type", "submit");
-submitelement.setAttribute("name", "dsubmit");
-submitelement.setAttribute("value", "Submit");
-createform.appendChild(submitelement);
+		// Open Mailto in New Window / Tab
+		window.open(uri,'_blank');
+	}
+</script>
