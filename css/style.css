@@ -235,12 +235,29 @@ Flexbox
 
 		}
 }  */
-@media (max-width: 609px) {
-	header {
+
+@media all and (max-width: 600px) {
+	.containerflex, .container {
+		flex-direction: column;
+	}
+  }
+
+/* @media (max-width: 992px) {
+	.main-header {
 	display: flex;
+	flex-direction: column; 
 	flex-wrap: wrap;
 	align-content: space-around;
 	justify-content: center;
   align-items: center;
  }
-}
+
+} */
+
+
+  
+  @media (max-width: 1030px) {
+	.containerflex {
+	  flex: none;
+	}
+  }
