@@ -48,7 +48,7 @@ a {
 /* ---- Left Align Logo ---- */
 img {
 	max-width: 100%;
-	/* margin-bottom: 20px; */
+	/* margin-bottom: 10px; */
 	border-radius: 10px;
 	background-size: cover;
 }
@@ -125,7 +125,6 @@ img {
 	padding: 14px 16px;
 	display: inline-block;
 	float: 6%;
-
 
 /* ---- Temp code to highlight social media icons ---- */
   	outline: 2px dashed blue;
@@ -239,13 +238,15 @@ Flexbox
 @media all and (max-width: 600px) {
 	.containerflex, .container {
 		flex-direction: column;
-	}
+		width: 100%;
+
+  	}
   }
 
 /* @media (max-width: 992px) {
 	.main-header {
 	display: flex;
-	flex-direction: column; 
+	flex-direction: column;
 	flex-wrap: wrap;
 	align-content: space-around;
 	justify-content: center;
@@ -255,7 +256,7 @@ Flexbox
 } */
 
 
-  
+
   @media (max-width: 1030px) {
 	.containerflex {
 	  flex: none;
