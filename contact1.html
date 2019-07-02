@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>Contact Form</title> <!-- Include CSS file here -->
 <link href="css/form.css" rel="stylesheet">
 </head>
 <body>
 <div id="main">
 <h1>K-Rod Contact Form</h1>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+var m = new mandrill.Mandrill('685d024ee4892967451eaed7356f7bc8-us3'); // This will be public
+
+function sendTheMail(){
+    m.messages.send({
+        "message": {
+            "from_email": "your_email_address",
+            "from_name": "your_name",
+            "to":[{"email": "someone's_email_address", "name": "someone's_name"}], // Array of recipients
+            "subject": "optional_subject_line",
+            "text": "Text to be sent in the body" // Alternatively, use the "html" key to send HTML emails rather than plaintext
+        }
+    });
+}
 <div id="form_sample"></div> <!-- Include JS file here -->
 <script src="js/form.js"></script>
 </div>
